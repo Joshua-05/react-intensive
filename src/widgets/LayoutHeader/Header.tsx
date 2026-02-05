@@ -1,0 +1,10 @@
+const Header = () => {
+
+    return (
+        <header>
+            <h1>Блог</h1>
+        </header>
+    )
+}
+
+export default Header
