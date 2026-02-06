@@ -1,4 +1,3 @@
-import styles from "./PostList.module.css"
 import PostCard from "../../entities/post/ui/PostCard"
 
 const PostList = () => {
@@ -26,11 +25,11 @@ const PostList = () => {
     ]
 
     return(
-        <div className={styles.postList}>
+        <>
             {
                 data.map(post => <PostCard key={post.id} title={post.title} text={post.text} />)
             }
-        </div>
+        </>
     )
 }
 
