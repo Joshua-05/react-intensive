@@ -1,0 +1,21 @@
+.modal_light{
+    position: fixed;
+    right: 40%;
+    top: 20%;
+    background-color: white;
+    box-sizing: border-box;
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+.modal_dark{
+    position: fixed;
+    right: 40%;
+    top: 20%;
+    background-color: black;
+    box-sizing: border-box;
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid white;
+}
