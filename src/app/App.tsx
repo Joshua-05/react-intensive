@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import MainLayout from '../shared/layouts/MainLayout'
 import { useTheme } from '../shared/lib/theme/useTheme'
 import PostList from '../widgets/PostList/PostList'
@@ -6,12 +7,13 @@ import styles from "./App.module.css"
 function App() {
 
   const { theme } = useTheme()
+  const [loading, setLoading] = useState<boolean>(false)
+  const [error, setError] = useState(null)
 
-  console.log(theme)
   return (
-    <div id='app' className={styles[`app_${theme}`]}>
+    <div id='app' className={`${styles.app} ${styles[`app_${theme}`]} `}>
       <MainLayout>
-        <PostList />
+        <PostList isLoading={loading} error={error}/>
       </MainLayout>
     </div>
   )
