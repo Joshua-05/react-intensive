@@ -16,13 +16,14 @@ const Header = () => {
             <header>
                 <h1>Блог</h1>
                 <div>
-                    <Button value="О проекте" func={changeOpen}/>
+                    <Button style="nav" value="О проекте" func={changeOpen}/>
                     <ThemeSwitcher />
                 </div>
             </header>
-            <Modal open={open}>
-                <h4>О проекте:</h4>
-                <p>Этот проект был создан с целью оточить навыки</p>
+            <Modal open={open} >
+                <Modal.Header>О проекте</Modal.Header>
+                <Modal.Body>Этот проект был создан с целью оточить навыки</Modal.Body>
+                <Modal.Footer> <Button value="ОК" func={changeOpen} /> </Modal.Footer>
             </Modal>
         </>
     )

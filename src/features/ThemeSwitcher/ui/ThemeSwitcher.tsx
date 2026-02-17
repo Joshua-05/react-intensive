@@ -7,9 +7,6 @@ export const ThemeSwitcher = () => {
     const value = theme === 'light'? "dark": 'light'
 
     return (
-        // <button onClick={changeTheme}>
-        //     {theme === 'light'? "dark": 'light'}
-        // </button>
-        <Button value={value} func={changeTheme}/>
+        <Button style="nav" value={value} func={changeTheme}/>
     )
 }

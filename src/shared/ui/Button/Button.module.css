@@ -1,0 +1,26 @@
+.button {
+    box-sizing: border-box;
+    font-size: 16px;
+    padding: 5px;
+    border: 1px solid;
+    cursor: pointer;
+}
+
+.button_light {
+    background-color: white;
+    border-color: black;
+    color: black;
+}
+
+.button_dark {
+    background-color: black;
+    border-color: white;
+    color: white;
+}
+
+.button_nav {
+    border: none;
+    text-decoration: underline;
+    background-color: transparent;
+    color: inherit;
+}
