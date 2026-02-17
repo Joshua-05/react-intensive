@@ -1,20 +1,21 @@
-import type { FC, ReactNode } from "react"
 import styles from "./MainLayout.module.css"
 import Header from "../../widgets/LayoutHeader/Header"
 import Footer from "../../widgets/LayoutFooter/Footer"
+import { Outlet } from "react-router-dom"
+import { useTheme } from "../lib/theme/useTheme"
 
-interface MainLayoutProps {
-    children: ReactNode
-}
+const MainLayout = () => {
 
-const MainLayout: FC<MainLayoutProps> = ( {children} ) => {
+    const { theme } = useTheme()
     return(
-        <div className={styles.mainLayout}>
-            <Header />
-            <main className={styles.mainContent}>
-                {children}
-            </main>
-            <Footer />
+        <div className={`${styles.app} ${styles[`app_${theme}`]} `}>
+            <div className={styles.mainLayout}>
+                <Header />
+                <main className={styles.mainContent}>
+                    <Outlet />
+                </main>
+                <Footer />
+            </div>
         </div>
     )
 }
