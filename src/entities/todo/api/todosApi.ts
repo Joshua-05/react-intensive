@@ -28,7 +28,7 @@ export const todosApi = createApi({
         method: 'PATCH',
         body: patch,
       }),
-      invalidatesTags: (_, __, { id, userId }) => [
+      invalidatesTags: (_, __, { userId }) => [
         { type: 'Todos' },
         { type: 'UserTodos', id: userId },
       ],
