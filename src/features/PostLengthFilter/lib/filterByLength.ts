@@ -1,8 +1,4 @@
-export interface Post {
-    id: string
-    title: string
-    text: string
-}
+import type { Post } from "../../PostList/model/hooks/usePosts"
 
 export const filterByLength = (posts: Post[], minLength: number): Post[] => {
     if (!minLength) return posts

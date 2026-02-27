@@ -1,43 +1,17 @@
 import { Fragment } from "react/jsx-runtime"
-import PostCard, { type PostCardProps } from "../../entities/post/ui/PostCard"
+import PostCard from "../../entities/post/ui/PostCard"
 import { withLoading } from "../../shared/lib/hoc/withLoading"
-import { useCallback, useMemo, useState, type FC } from "react"
+import { useCallback, useMemo, useState } from "react"
 import { filterByLength } from "../../features/PostLengthFilter/lib/filterByLength"
 import { PostLengthFilter } from "../../features/PostLengthFilter/ui/PostLengthFilter"
+import type { Post } from "../../features/PostList/model/hooks/usePosts"
 
-const posts = [
-        {
-            "id": "1",
-            "title": "Title1",
-            "text": "textTextTextTextTextText"
-        },
-        {
-            "id": "2",
-            "title": "Title22",
-            "text": "textTextTextTextTextText"
-        },
-        {
-            "id": "3",
-            "title": "Title333Title4444",
-            "text": "textTextTextTextTextText"
-        },
-        {
-            "id": "4",
-            "title": "Title4444Title4444Title4444",
-            "text": "textTextTextTextTextText"
-        },
-        {
-            "id": "5",
-            "title": "Title4444Title4444Title4444Title4444",
-            "text": "textTextTextTextTextText"
-        },
-    ]
 
 interface PostListProps {
-    data?: PostCardProps[]
+    posts: Post[]
 }
 
-const PostList : FC<PostListProps> = () => {
+const PostList = ({posts} : PostListProps) => {
     const [minLength, setMinLength] = useState(0)
 
     const filteredPosts = useMemo(() => {
@@ -54,7 +28,8 @@ const PostList : FC<PostListProps> = () => {
                 <PostCard 
                     id={post.id} 
                     title={post.title} 
-                    text={post.text} 
+                    body={post.body} 
+                    userId={post.userId}
                 />
             </Fragment>
         ))

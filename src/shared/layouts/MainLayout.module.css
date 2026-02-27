@@ -1,3 +1,21 @@
+.app {
+    padding: 0 20%;
+}
+
+.app_dark {
+    background-color: black;
+    color: white;
+}
+
+.app_light {
+    background-color: white;
+    color: black;
+}
+
+body {
+    margin: 0;
+}
+
 .mainLayout {
   display: flex;
   flex-direction: column;
